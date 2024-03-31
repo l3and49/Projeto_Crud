@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cepMensagem = document.getElementById("cepMensagem");
     const cepValido = /^[0-9]{5}-[0-9]{3}$/;
     const form = document.querySelector('form');
+    let validaCep = false;
     
     cep.addEventListener('keyup', async () => {
         
@@ -29,9 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 bairro.value = responseCep.bairro;
                 cidade.value = responseCep.localidade;
                 estado.value = responseCep.uf;
+                validaCep = true;
             } else {
                 cepMensagem.style.display = "block";
                 limparCamposCep();
+                validaCep = false;
             }
 
         } catch(error){
@@ -61,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     form.addEventListener('submit', function(event) {
-        if (!cepValido.test(cep.value)) {
+        if (!cepValido.test(cep.value) || validaCep===false) {
             event.preventDefault(); // Cancela o envio do formulário
             cepMensagem.style.display = "block";
             limparCamposCep();
