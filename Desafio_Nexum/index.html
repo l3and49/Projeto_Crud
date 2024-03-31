@@ -1,0 +1,72 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados da Pessoa</title>
+    <script src="js/validacaoEmail.js"></script>
+    <script src="js/scriptTipoPessoa.js"></script>
+    <script src="js/mascaraEValidacao.js.js"></script>
+    <script src="js/scriptCEP.js"></script>
+</head>
+<body>
+    <form action="" autocomplete="off">
+        <fieldset>
+            <h3>Dados da pessoa</h3>
+            <fieldset>
+                <div class="divNome">
+                    <label for="nome">Nome Completo: </label><br>
+                    <input type="text" name="nome" id="nome" required value="a@a"><br>
+                </div>
+                <div class="divEmail">
+                    <label for="email" >Email:</label><br>
+                    <input type="email" onblur="validarEmail()" onfocus="redefinirMsg()" id="email" value="a@a" required/><br>
+                    <span id="emailMensagem" style="color: red; display: none; font-size: small;">Email Inválido</span>
+                </div>
+                <div class="tipoPessoa" id="tipoPessoa">
+                    <label for="selectTipoPessoa">Tipo de Pessoa: </label><br>
+                    <select id="selectTipoPessoa" name="selectTipoPessoa" required ><br>
+                        <option value="PF">Pessoa Física</option>
+                        <option value="PJ">Pessoa Jurídica</option>
+                    </select><br>
+                </div>
+                <div class="cpf" id="cpf" style="display: block;">
+                    <label for="cpf" id="cpf">CPF: </label><br>
+                    <input type="text" name="txtCpf" id="txtCpf" required value="47073222808"><br>
+                    <span id="cpfMensagem" style="color: red; display: none; font-size: small;">CPF inválido</span>
+                </div>
+                <div class="cnpj" id="cnpj" style="display: none;">
+                    <label for="cnpj" id="cnpj" >CNPJ: </label><br>
+                    <input type="text" name="txtCnpj" id="txtCnpj"><br>
+                    <span id="cnpjMensagem" style="color: red; display: none; font-size: small;">CNPJ inválido</span>
+                </div>
+                <div class="divCep">
+                    <label for="cep">CEP: </label><br>
+                    <input type="text" name="cep" id="cep" required><br>
+                    <span id="cepMensagem" style="color: red; display: none; font-size: small;">CEP inválido</span>
+                </div>
+                <div class="divEndereco">
+                    <label for="endereco">Endereço: </label><br>
+                    <input type="text" name="endereco" id="endereco" value="" disabled required><br>
+                </div>
+                <div class="divNumero">
+                    <label for="numero">Número: </label><br>
+                    <input type="text" name="numero" id="numero" required value="31"><br>
+                </div>
+                <div class="divBairro">
+                    <label for="bairro">Bairro: </label><br>
+                    <input type="text" name="bairro" id="bairro" value="" disabled required><br>
+                </div>
+                <div class="divCidade">
+                    <label for="cidade">Cidade: </label><br>
+                    <input type="text" name="cidade" id="cidade" value="" disabled required><br>
+                </div>
+                <div class="divEstado">
+                    <label for="estado">Estado: </label><br>
+                    <input type="text" name="estado" id="estado" value="" disabled required><br>
+                </div>
+            </fieldset><br>
+            <input id="Limpar" type="reset" value="Limpar">
+            <input type="submit" value="Gravar">
+        </fieldset>
+    </form>
+</body>
+</html>
