@@ -14,11 +14,11 @@
             <fieldset>
                 <div class="divNome">
                     <label for="nome">Nome Completo: </label><br>
-                    <input type="text" name="nome" id="nome" maxlength="50" required><br>
+                    <input type="text" name="txtNome" id="nome" maxlength="50" required><br>
                 </div>
                 <div class="divEmail">
                     <label for="email" >Email:</label><br>
-                    <input type="email" onblur="validarEmail()" onfocus="redefinirMsg()" id="email" maxlength="100" required/><br>
+                    <input type="email" name="txtEmail" onblur="validarEmail()" onfocus="redefinirMsg()" id="email" maxlength="100" required/><br>
                     <span id="emailMensagem" style="color: red; display: none; font-size: small;">Email Inválido</span>
                 </div>
                 <div class="tipoPessoa" id="tipoPessoa">
@@ -40,28 +40,28 @@
                 </div>
                 <div class="divCep">
                     <label for="cep">CEP: </label><br>
-                    <input type="text" name="cep" id="cep" required><br>
+                    <input type="text" name="txtCep" id="cep" required><br>
                     <span id="cepMensagem" style="color: red; display: none; font-size: small;">CEP inválido</span>
                 </div>
                 <div class="divEndereco">
                     <label for="endereco">Endereço: </label><br>
-                    <input type="text" name="endereco" id="endereco" value="" disabled required><br>
+                    <input type="text" name="txtEndereco" id="endereco" value="" disabled required><br>
                 </div>
                 <div class="divNumero">
                     <label for="numero">Número: </label><br>
-                    <input type="text" name="numero" id="numero" required><br>
+                    <input type="text" name="txtNumero" id="numero" required><br>
                 </div>
                 <div class="divBairro">
                     <label for="bairro">Bairro: </label><br>
-                    <input type="text" name="bairro" id="bairro" value="" disabled required><br>
+                    <input type="text" name="txtBairro" id="bairro" value="" disabled required><br>
                 </div>
                 <div class="divCidade">
                     <label for="cidade">Cidade: </label><br>
-                    <input type="text" name="cidade" id="cidade" value="" disabled required><br>
+                    <input type="text" name="txtCidade" id="cidade" value="" disabled required><br>
                 </div>
                 <div class="divEstado">
                     <label for="estado">Estado: </label><br>
-                    <input type="text" name="estado" id="estado" value="" disabled required><br>
+                    <input type="text" name="txtEstado" id="estado" value="" disabled required><br>
                 </div>
             </fieldset><br>
             <input id="Limpar" type="reset" value="Limpar">

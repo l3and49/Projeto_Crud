@@ -13,3 +13,12 @@ CREATE TABLE `dbnexum`.`cad_pessoas` (
   `estado` VARCHAR(2) NOT NULL,
   PRIMARY KEY (`id_pessoa`));
 
+ALTER TABLE `dbnexum`.`cad_pessoas` 
+ADD COLUMN `cnpj` INT NULL AFTER `cpf`,
+CHANGE COLUMN `cpf_cnpj` `cpf` INT NULL ;
+
+ALTER TABLE `dbnexum`.`cad_pessoas` 
+CHANGE COLUMN `cpf` `cpf` VARCHAR(15) NULL DEFAULT NULL ,
+CHANGE COLUMN `cnpj` `cnpj` VARCHAR(18) NULL DEFAULT NULL ,
+CHANGE COLUMN `cep` `cep` VARCHAR(9) NOT NULL ,
+CHANGE COLUMN `numero` `numero` VARCHAR(7) NOT NULL ;
