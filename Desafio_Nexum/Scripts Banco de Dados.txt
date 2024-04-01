@@ -1,0 +1,15 @@
+Scripts Banco de Dados:
+CREATE TABLE `dbnexum`.`cad_pessoas` (
+  `id_pessoa` SMALLINT NOT NULL,
+  `nome_completo` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `tipo_pessoa` VARCHAR(10) NOT NULL,
+  `cpf_cnpj` INT NOT NULL,
+  `cep` INT NOT NULL,
+  `endereco` VARCHAR(200) NOT NULL,
+  `numero` INT NOT NULL,
+  `bairro` VARCHAR(50) NOT NULL,
+  `cidade` VARCHAR(25) NOT NULL,
+  `estado` VARCHAR(2) NOT NULL,
+  PRIMARY KEY (`id_pessoa`));
+
