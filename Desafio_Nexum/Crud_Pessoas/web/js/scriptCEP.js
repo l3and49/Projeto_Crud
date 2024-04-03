@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cepMensagem = document.getElementById("cepMensagem");
     const cepValido = /^[0-9]{5}-[0-9]{3}$/;
     const form = document.querySelector('form');
-    let validaCep = false;
+    let validaCep = true;
     
     cep.addEventListener('keyup', async () => {
         
@@ -68,6 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Cancela o envio do formulário
             cepMensagem.style.display = "block";
             limparCamposCep();
+            console.log("CCCCCCCCCCCCCCCCCCCCCCCCC");
+            console.log("validaCep = "+validaCep);
+            console.log("cepValido.test(cep.value): "+cepValido.test(cep.value));
+            
         }
     });
 });

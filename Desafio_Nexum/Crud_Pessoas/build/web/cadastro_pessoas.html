@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Dados da Pessoa</title>
+    <script src="js/validacaoEmail.js"></script>
+    <script src="js/scriptTipoPessoa.js"></script>
+    <script src="js/mascaraEValidacao.js.js"></script>
+    <script src="js/scriptCEP.js"></script>
+</head>
+<body>
+    <form method="post" action="salvar_cadastros.jsp" autocomplete="off">
+        <fieldset>
+            <h3>Dados da pessoa</h3>
+            <fieldset>
+                <div class="divNome">
+                    <label for="nome">Nome Completo: </label><br>
+                    <input type="text" name="txtNome" id="nome" maxlength="50" required><br>
+                </div>
+                <div class="divEmail">
+                    <label for="email" >Email:</label><br>
+                    <input type="email" name="txtEmail" onblur="validarEmail()" onfocus="redefinirMsg()" id="email" maxlength="100" required/><br>
+                    <span id="emailMensagem" style="color: red; display: none; font-size: small;">Email Inválido</span>
+                </div>
+                <div class="tipoPessoa" id="tipoPessoa">
+                    <label for="selectTipoPessoa">Tipo de Pessoa: </label><br>
+                    <select id="selectTipoPessoa" name="selectTipoPessoa" required ><br>
+                        <option value="Fisica">Pessoa Física</option>
+                        <option value="Juridica">Pessoa Jurídica</option>
+                    </select><br>
+                </div>
+                <div class="cpf" id="cpf" style="display: block;">
+                    <label for="cpf" id="cpf">CPF: </label><br>
+                    <input type="text" name="txtCpf" id="txtCpf" required><br>
+                    <span id="cpfMensagem" style="color: red; display: none; font-size: small;">CPF inválido</span>
+                </div>
+                <div class="cnpj" id="cnpj" style="display: none;">
+                    <label for="cnpj" id="cnpj" >CNPJ: </label><br>
+                    <input type="text" name="txtCnpj" id="txtCnpj"><br>
+                    <span id="cnpjMensagem" style="color: red; display: none; font-size: small;">CNPJ inválido</span>
+                </div>
+                <div class="divCep">
+                    <label for="cep">CEP: </label><br>
+                    <input type="text" name="txtCep" id="cep" required><br>
+                    <span id="cepMensagem" style="color: red; display: none; font-size: small;">CEP inválido</span>
+                </div>
+                <div class="divEndereco">
+                    <label for="endereco">Endereço: </label><br>
+                    <input type="text" name="txtEndereco" id="endereco" readonly required><br>
+                </div>
+                <div class="divNumero">
+                    <label for="numero">Número: </label><br>
+                    <input type="text" pattern="[0-9]+-?[0-9]*" name="txtNumero" id="numero" required><br>
+                </div>
+                <div class="divBairro">
+                    <label for="bairro">Bairro: </label><br>
+                    <input type="text" name="txtBairro" id="bairro" readonly required><br>
+                </div>
+                <div class="divCidade">
+                    <label for="cidade">Cidade: </label><br>
+                    <input type="text" name="txtCidade" id="cidade" readonly required><br>
+                </div>
+                <div class="divEstado">
+                    <label for="estado">Estado: </label><br>
+                    <input type="text" name="txtEstado" id="estado" readonly required><br>
+                </div><br>
+                <input id="Limpar" type="reset" value="Limpar">
+            </fieldset><br>
+            <input id="cancelar" type="button" value="Cancelar">
+            <input type="submit" value="Gravar">
+            <script>
+                document.getElementById("cancelar").addEventListener("click", function() {
+                    window.location.href = "index.html";
+                });
+            </script>
+        </fieldset>
+    </form>
+</body>
+</html>

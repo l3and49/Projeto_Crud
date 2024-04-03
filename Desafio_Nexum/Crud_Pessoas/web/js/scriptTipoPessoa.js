@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var cnpjSelect = document.getElementById('txtCnpj');
 
     selectTipoPessoa.addEventListener('change', function() {
-        cpfSelect.value = "";
-        cnpjSelect.value = "";
-        if (selectTipoPessoa.value === 'PF') {
+        cpfSelect.value = null;
+        cnpjSelect.value = null;
+        if (selectTipoPessoa.value === 'Fisica') {
             cpfSelect.required = true;
             cnpjSelect.required = false;
             cpfDiv.style.display = 'block';
             cnpjDiv.style.display = 'none';
-        } else if (selectTipoPessoa.value === 'PJ') {
+        } else if (selectTipoPessoa.value === 'Juridica') {
             cpfSelect.required = false;
             cnpjSelect.required = true;
             cpfDiv.style.display = 'none';

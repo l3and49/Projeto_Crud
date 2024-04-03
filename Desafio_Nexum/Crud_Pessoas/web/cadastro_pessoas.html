@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
     <title>Dados da Pessoa</title>
     <script src="js/validacaoEmail.js"></script>
     <script src="js/scriptTipoPessoa.js"></script>
@@ -19,53 +20,59 @@
                 <div class="divEmail">
                     <label for="email" >Email:</label><br>
                     <input type="email" name="txtEmail" onblur="validarEmail()" onfocus="redefinirMsg()" id="email" maxlength="100" required/><br>
-                    <span id="emailMensagem" style="color: red; display: none; font-size: small;">Email Inv√°lido</span>
+                    <span id="emailMensagem" style="color: red; display: none; font-size: small;">Email Inv·lido</span>
                 </div>
                 <div class="tipoPessoa" id="tipoPessoa">
                     <label for="selectTipoPessoa">Tipo de Pessoa: </label><br>
                     <select id="selectTipoPessoa" name="selectTipoPessoa" required ><br>
-                        <option value="PF">Pessoa F√≠sica</option>
-                        <option value="PJ">Pessoa Jur√≠dica</option>
+                        <option value="Fisica">Pessoa FÌsica</option>
+                        <option value="Juridica">Pessoa JurÌdica</option>
                     </select><br>
                 </div>
                 <div class="cpf" id="cpf" style="display: block;">
                     <label for="cpf" id="cpf">CPF: </label><br>
                     <input type="text" name="txtCpf" id="txtCpf" required><br>
-                    <span id="cpfMensagem" style="color: red; display: none; font-size: small;">CPF inv√°lido</span>
+                    <span id="cpfMensagem" style="color: red; display: none; font-size: small;">CPF inv·lido</span>
                 </div>
                 <div class="cnpj" id="cnpj" style="display: none;">
                     <label for="cnpj" id="cnpj" >CNPJ: </label><br>
                     <input type="text" name="txtCnpj" id="txtCnpj"><br>
-                    <span id="cnpjMensagem" style="color: red; display: none; font-size: small;">CNPJ inv√°lido</span>
+                    <span id="cnpjMensagem" style="color: red; display: none; font-size: small;">CNPJ inv·lido</span>
                 </div>
                 <div class="divCep">
                     <label for="cep">CEP: </label><br>
                     <input type="text" name="txtCep" id="cep" required><br>
-                    <span id="cepMensagem" style="color: red; display: none; font-size: small;">CEP inv√°lido</span>
+                    <span id="cepMensagem" style="color: red; display: none; font-size: small;">CEP inv·lido</span>
                 </div>
                 <div class="divEndereco">
-                    <label for="endereco">Endere√ßo: </label><br>
-                    <input type="text" name="txtEndereco" id="endereco" value="" disabled required><br>
+                    <label for="endereco">EndereÁo: </label><br>
+                    <input type="text" name="txtEndereco" id="endereco" readonly required><br>
                 </div>
                 <div class="divNumero">
-                    <label for="numero">N√∫mero: </label><br>
-                    <input type="text" name="txtNumero" id="numero" required><br>
+                    <label for="numero">N˙mero: </label><br>
+                    <input type="text" pattern="[0-9]+-?[0-9]*" name="txtNumero" id="numero" required><br>
                 </div>
                 <div class="divBairro">
                     <label for="bairro">Bairro: </label><br>
-                    <input type="text" name="txtBairro" id="bairro" value="" disabled required><br>
+                    <input type="text" name="txtBairro" id="bairro" readonly required><br>
                 </div>
                 <div class="divCidade">
                     <label for="cidade">Cidade: </label><br>
-                    <input type="text" name="txtCidade" id="cidade" value="" disabled required><br>
+                    <input type="text" name="txtCidade" id="cidade" readonly required><br>
                 </div>
                 <div class="divEstado">
                     <label for="estado">Estado: </label><br>
-                    <input type="text" name="txtEstado" id="estado" value="" disabled required><br>
-                </div>
+                    <input type="text" name="txtEstado" id="estado" readonly required><br>
+                </div><br>
+                <input id="Limpar" type="reset" value="Limpar">
             </fieldset><br>
-            <input id="Limpar" type="reset" value="Limpar">
+            <input id="cancelar" type="button" value="Cancelar">
             <input type="submit" value="Gravar">
+            <script>
+                document.getElementById("cancelar").addEventListener("click", function() {
+                    window.location.href = "index.html";
+                });
+            </script>
         </fieldset>
     </form>
 </body>
