@@ -11,13 +11,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (selectTipoPessoa.value === 'Fisica') {
             cpfSelect.required = true;
             cnpjSelect.required = false;
-            cpfDiv.style.display = 'block';
+            $('.cpf').css({
+                'display': 'inline-block',
+                'width': '20%' // Defina a largura desejada para a div CPF
+            });
             cnpjDiv.style.display = 'none';
         } else if (selectTipoPessoa.value === 'Juridica') {
             cpfSelect.required = false;
             cnpjSelect.required = true;
             cpfDiv.style.display = 'none';
-            cnpjDiv.style.display = 'block';
+            $('.cnpj').css({
+                'display': 'inline-block',
+                'width': '20%' // Defina a largura desejada para a div CPF
+            });
         }
     });
 });

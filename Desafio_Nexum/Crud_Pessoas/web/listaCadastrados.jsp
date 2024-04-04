@@ -57,5 +57,44 @@
                 }
             %>
         </center>
+        <script>
+        $(document).ready(function(){
+            // Adiciona estilo à tabela
+            $('#tabelaCadastros').css({
+                'width': '80%',
+                'margin': '20px auto',
+                'border-collapse': 'collapse',
+                'box-shadow': '0 2px 4px rgba(0,0,0,0.1)'
+            });
+
+            // Adiciona estilo às células de cabeçalho
+            $('#tabelaCadastros th').css({
+                'padding': '8px',
+                'border-bottom': '1px solid #ddd',
+                'text-align': 'left',
+                'background-color': '#f2f2f2'
+            });
+
+            // Adiciona estilo às células de dados
+            $('#tabelaCadastros td').css({
+                'padding': '8px',
+                'border-bottom': '1px solid #ddd',
+                'text-align': 'left'
+            });
+
+            // Adiciona estilo aos links
+            $('a').css({
+                'color': '#007bff',
+                'text-decoration': 'none'
+            });
+
+            // Adiciona estilo ao hover dos links
+            $('a').hover(function(){
+                $(this).css('text-decoration', 'underline');
+            }, function(){
+                $(this).css('text-decoration', 'none');
+            });
+        });
+    </script>
     </body>
 </html>

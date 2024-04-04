@@ -25,3 +25,5 @@ CHANGE COLUMN `numero` `numero` VARCHAR(7) NOT NULL ;
 
 ALTER TABLE `dbnexum`.`cad_pessoas` 
 CHANGE COLUMN `id_pessoa` `id_pessoa` SMALLINT NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE nome_da_tabela AUTO_INCREMENT = 1;

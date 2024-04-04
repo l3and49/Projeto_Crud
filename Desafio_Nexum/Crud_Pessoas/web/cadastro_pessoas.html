@@ -10,22 +10,24 @@
 </head>
 <body>
     <form method="post" action="salvar_cadastros.jsp" autocomplete="off">
-        <fieldset>
+        <fieldset id="borda-fora">
             <h3>Dados da pessoa</h3>
-            <fieldset>
-                <div class="divNome">
-                    <label for="nome">Nome Completo: </label><br>
-                    <input type="text" name="txtNome" id="nome" maxlength="50" required><br>
-                </div>
-                <div class="divEmail">
-                    <label for="email" >Email:</label><br>
-                    <input type="email" name="txtEmail" onblur="validarEmail()" onfocus="redefinirMsg()" id="email" maxlength="100" required/><br>
-                    <span id="emailMensagem" style="color: red; display: none; font-size: small;">Email Inválido</span>
+            <fieldset id="borda-dentro">
+                <div class="divNomeEmail">
+                    <div class="divNome">
+                        <label for="nome">Nome Completo: </label><br>
+                        <input type="text" name="txtNome" id="nome" maxlength="50" required><br>
+                    </div>
+                    <div class="divEmail">
+                        <label for="email" >Email:</label><br>
+                        <input type="email" name="txtEmail" onblur="validarEmail()" onfocus="redefinirMsg()" id="email" maxlength="100" required/><br>
+                        <span id="emailMensagem" style="color: red; display: none; font-size: small;">Email Inválido</span>
+                    </div>
                 </div>
                 <div class="tipoPessoa" id="tipoPessoa">
                     <label for="selectTipoPessoa">Tipo de Pessoa: </label><br>
                     <select id="selectTipoPessoa" name="selectTipoPessoa" required ><br>
-                        <option value="Fisica">Pessoa Física</option>
+                        <option value="Fisica">Pessoa Fisíca</option>
                         <option value="Juridica">Pessoa Jurídica</option>
                     </select><br>
                 </div>
@@ -37,12 +39,12 @@
                 <div class="cnpj" id="cnpj" style="display: none;">
                     <label for="cnpj" id="cnpj" >CNPJ: </label><br>
                     <input type="text" name="txtCnpj" id="txtCnpj"><br>
-                    <span id="cnpjMensagem" style="color: red; display: none; font-size: small;">CNPJ inválido</span>
+                    <span id="cnpjMensagem" style="color: red; display: inline-none; font-size: small;">CNPJ inválido</span>
                 </div>
                 <div class="divCep">
                     <label for="cep">CEP: </label><br>
                     <input type="text" name="txtCep" id="cep" required><br>
-                    <span id="cepMensagem" style="color: red; display: none; font-size: small;">CEP inválido</span>
+                    <span id="cepMensagem" style="color: red; display: none; font-size: small;">CEP Inválido</span>
                 </div>
                 <div class="divEndereco">
                     <label for="endereco">Endereço: </label><br>
@@ -50,7 +52,7 @@
                 </div>
                 <div class="divNumero">
                     <label for="numero">Número: </label><br>
-                    <input type="text" pattern="[0-9]+-?[0-9]*" name="txtNumero" id="numero" required><br>
+                    <input type="text" pattern="[0-9]+-?[0-9]*" maxlength="10" name="txtNumero" id="numero" required><br>
                 </div>
                 <div class="divBairro">
                     <label for="bairro">Bairro: </label><br>
@@ -66,8 +68,10 @@
                 </div><br>
                 <input id="Limpar" type="reset" value="Limpar">
             </fieldset><br>
-            <input id="cancelar" type="button" value="Cancelar">
-            <input type="submit" value="Gravar">
+            <div id="botoes-container">
+                <input id="cancelar" type="button" value="Cancelar">
+                <input type="submit" value="Gravar">
+            </div>
             <script>
                 document.getElementById("cancelar").addEventListener("click", function() {
                     window.location.href = "index.html";
@@ -75,5 +79,7 @@
             </script>
         </fieldset>
     </form>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/cadastroStyle.js"></script>
 </body>
 </html>

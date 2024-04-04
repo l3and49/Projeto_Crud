@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Alteração de Cadastro</title>
+        <title>Alteraï¿½ï¿½o de Cadastro</title>
         <meta charset="UTF-8">
         <script src="js/validacaoEmail.js"></script>
         <script src="js/scriptTipoPessoa.js"></script>
@@ -102,5 +102,7 @@
             </script>
         </fieldset>
     </form>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/cadastroStyle.js"></script>
     </body>
 </html>
