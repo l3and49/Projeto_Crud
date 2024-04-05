@@ -1,22 +1,25 @@
-document.getElementById("cancelar").addEventListener("click", function() {
-    window.location.href = "index.html";
-});
-
 // Adiciona estilo aos elementos
+
+$('body').css({
+        'background': '#F5FFFA'
+    });
+
 $('#borda-fora').css({
     'padding': '20px',
     'border-radius': '5px',
     'box-shadow': '0 2px 4px rgba(0,0,0,0.1)',
-    'margin': '0 auto',
-    'max-width': '100%'
-});
+    'margin': '50px auto',
+    'max-width': '100%',
+    'background': '#F8F8FF'
+ });
 
 $('#borda-dentro').css({
     'padding': '20px',
     'border': '1px solid #ccc',
     'border-radius': '5px',
     'box-sizing': 'border-box',
-    'margin-bottom': '10px'
+    'margin-bottom': '5px',
+    'background': '#FFFAFA'
 });
 
 $('label').css({

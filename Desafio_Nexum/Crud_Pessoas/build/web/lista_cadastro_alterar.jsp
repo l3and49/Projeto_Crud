@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Alteraï¿½ï¿½o de Cadastro</title>
+        <title>Alterando Cadastro</title>
         <meta charset="UTF-8">
         <script src="js/validacaoEmail.js"></script>
         <script src="js/scriptTipoPessoa.js"></script>
@@ -9,9 +9,9 @@
     </head>
     <body>
         <form method="post" action="altera_cadastro.jsp" autocomplete="off">
-        <fieldset>
-            <h3>Dados da pessoa</h3>
-            <fieldset>
+            <fieldset id="borda-fora">
+            <h3>Alteração de Dados</h3>
+            <fieldset id="borda-dentro">
                 <div class="divId" style="display: none">
                     <label for="idPessoa">ID: </label><br>
                     <input type="text" name="txtID" id="id" value="<%= request.getParameter("id")%>"><br>
@@ -67,15 +67,18 @@
                     <label for="estado">Estado: </label><br>
                     <input type="text" name="txtEstado" id="estado" value="<%= request.getParameter("estado")%>" readonly required><br>
                 </div><br>
-                <input id="voltarDados" type="reset" value="Dados Origniais">
+                <input id="voltarDados" type="reset" value="Dados Originais">
                 <input id="Limpar" type="button" onclick="limparCampos()" value="Limpar">
             </fieldset><br>
             <input id="cancelar" type="button" value="Cancelar">
             <input type="submit" value="Alterar">
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+            <script src="js/cadastroStyle.js"></script>
             <script>
                 document.getElementById("cancelar").addEventListener("click", function() {
                     window.location.href = "listaCadastrados.jsp";
                 });
+
                 function limparCampos() {
                     const nome = document.getElementById("nome");
                     const email = document.getElementById("email");
@@ -102,7 +105,5 @@
             </script>
         </fieldset>
     </form>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="js/cadastroStyle.js"></script>
     </body>
 </html>
